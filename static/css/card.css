@@ -1,0 +1,27 @@
+.card {
+    transition: .3s;
+    height: 385px;
+    width: 325px;
+    left: 0px;
+    top: 0px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+}
+
+.card:hover {
+    box-shadow: 0px 30px 45px 0px #2B282899;
+}
+
+.card-image img {
+    border-radius: 10px 10px 0 0;
+
+}
+
+.card-content {
+    font-family: "Gilroy", sans-serif;
+    padding: 10px 18px;
+    color: #fff;
+}
+.none {
+    display: none;
+}

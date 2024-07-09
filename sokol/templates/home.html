@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sokol</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+     <link rel="icon" href="{% static '../../media/sokol.png' %}" type="image/x-icon">
+     <link rel="icon" href="{% static '../../media/sokol.png' %}" type="image/png">
+    <link rel="apple-touch-icon" sizes="48x48" href="{% static '../../media/sokol.png' %}">
+</head>
+<body>
+     <header>
+        <nav>
+            <a href="#home">Главная</a>
+            <a href="#about">О нас</a>
+            <a href="#" style="color: #ffc236; font-size: 30px; font-weight: 600;"><img src="{% static '../../media/crane.png' %}" alt="">ЭВАКУАТОР</a> <p>ЭВАКУАЦИЯ АВТО</p>
+            <a href="#gallery">Работы</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </header>
+    <div id="home" class="header_wrapper">
+        <img src="{% static '../../media/item_191.jpg.png' %}" alt="">
+        <div class="header">
+            <span>БЫСТРЫЙ ВЫЕЗД ЭВАКУАТОРА</span>
+            <h2>НА МЕСТО ПРОИШЕСТВИЯ</h2>
+            <p>Среднее время приезда нашего эвакуатора на место 45 минут.</p> <!--Наши специалисты готовы помочь вам даже   -->
+        </div>
+    </div>
+    <section>
+        <div class="arrival"><img src="{% static '../../media/Overlay_tel.png' %}" alt="image"> Прибытие за <strong>30 минут</strong></div>
+        <div class="contact">+996 707 <strong>471 464</strong></div>
+        <div class="works"> <img src="{% static '../../media/Overlay.png' %}" alt="image"> Работаем для вас <strong>24/7</strong></div>
+    </section>
+    <div id="about" class="offer">
+        <div class="offer-box">
+            <img style="width: 588px; height: 300px;" src="{% static '../../media/truck.png.png' %}" alt="image">
+            <div class="box">
+                <h3>Что <strong>МЫ ПРЕДЛАГАЕМ</strong></h3>
+                <article>Evakuator Sokol - работаем круглосуточно. Опытные водители быстро и безопасно эвакуируют автомобилей любых
+                 марок в любой точке города. <br><br> Мы также предоставляем услуги по устранению неисправностей на дороге и
+                 доставке транспорта в другие регионы.
+            </article>
+            <p>Гарантия безопасности</p>
+            </div>
+        </div>
+    </div>
+     <div class="boxes">
+         <h2>Работая с Sokol вы получите</h2>
+        <div class="box_item">
+            <div class="item"><span><i>01</i></span>
+                <p>Всегда есть <br> свободные эвакуаторы</p>
+            </div>
+            <div class="item"><span><i>02</i></span>
+                <p>Самое быстрое <br> время подачи</p>
+            </div>
+            <div class="item"><span><i>03</i></span>
+                <p>Удобные способы <br> оплаты</p>
+            </div>
+            <div class="item"><span><i>04</i></span>
+                <p>Круглосуточная <br> работа</p>
+            </div>
+        </div>
+    </div>
+      <div id="gallery" class="gallery">
+            <div class="image-container">
+                {% for project in projects %}
+                    {% if project in projects %}
+                        <div class="card">
+                            <img src="{{ project.img.url }}" alt="img">
+                        </div>
+                    {% else %} <p>Ничего нет</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+      </div>
+    <section class="questions">
+        <div class="conteiner">
+            <h1><i>Часто задаваемые<span> вопросы...</span></i></h1>
+            <div class="block-questions">
+                <div class="left">
+                    <div class="question">
+                        <h2>Как вызвать эвакуатор?</h2>
+                        <p class="answer">Вам достаточно связаться с нашим оператором
+                            по контактному номеру. Представитель  уточнит все детали
+                            заказа и предоставит тарифный план. В течение 20-30 минут после
+                            заказа, эвакуатор прибудет в указанное Вами место.</p>
+		                <div class="circle"></div>
+                    </div>
+                    <div class="question">
+                        <h2>Как формируется цена на эвакуатор?</h2>
+                        <p class="answer">Стоимость услуг зависит от множества факторов: вес и габариты
+                            авто, местоположение, влияет техническое состояние автомобиля. Если есть сильные
+                            повреждения, заблокировано рулевое управление или колеса – цена увеличится. Начальная ставка
+                             от 1500 сом.</p>
+		                <div class="circle"></div>
+                    </div>
+                    <div class="question">
+                        <h2>Можете ли вы эвакуировать автомобиль с заблокированными колесами?</h2>
+                        <p class="answer">Да. Для такого мероприятия задействуется дополнительное оборудование, за счет
+                            чего эвакуация производится безопасно, без вреда для транспортного средства.</p>
+		                <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="question">
+                        <h2>Нужно ли предоствавлять какие-либо <br> документы при заказе эвакуатора?</h2>
+                        <p class="answer">Вы должны иметь при себе документы на автомобиль и
+                            водительское удостоверение, доверенность. Вы должны знать,
+                            что мы НЕ перевозим транспортные средства без документов.</p>
+		                <div class="circle"></div>
+                    </div>
+					<div class="question">
+                        <h2>Через сколько времени можно ожидать <br> приезда эвакуатора?</h2>
+                        <p class="answer">Наши эвакуаторы работают во всех районах и регионах Бишкека. Поэтому, Вы можете быть
+                            уверены, что спецтехника прибудет по указанному адресу в течение получаса. Также возможна
+                            эвакуция в Казахстан и РФ.</p>
+		                <div class="circle"></div>
+                    </div>
+					<div class="question">
+                        <h2>Что нужно сообщить пр заказе эвакуатора?</h2>
+                        <p class="answer">Вам нужно сообщить адрес, откуда и куда нужно будет транспортировать
+                            автомобиль. Также указывайте марку и модель машины. Среди
+                            сложностей может быть отсутствие ключей, заблокированный руль или колеса.
+		                <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<footer id="contacts">
+    <img class="image1" src="{% static '../../media/wings.png' %}" alt="image" style="transform: scale(-1, 1); width: 40px; height: 40px;"> <h1>Evacuator Sokol</h1> <img class="image2" style="width: 40px; height: 40px;" src="{% static '../../media/wings.png' %}" alt="">
+    <div class="tel"> <span>Контактные данные:</span>
+         <a href="tel:+996707471464">0707471464</a>
+         <a href="tel:+996702708085">0702708085</a>
+    </div>
+    <p>Все права защищены. © 2003-2024</p>
+    <div class="social">
+        <span>Мы в соц. сетях</span>
+        <div class="social-item">
+             <a href="https://web.whatsapp.com/+996707471464"><img style="width: 38px; height: 38px;" src="{% static '../../media/whatsapp.png' %}" alt="whatsapp"></a>
+            <a href="https://t.me/+996702708085"><img style="width: 38px; height: 38px ;" src="{% static '../../media/telegram.png' %}" alt="telegram"></a>
+            <a href="https://www.instagram.com/evacuatorsokol.kg/"><img style="width: 38px; height: 38px;" src="{% static '../../media/instagram.png' %}" alt="instagram"></a>
+            <a href="https://vt.tiktok.com/ZSY9tgVaj/"><img style="width: 38px; height: 38px;" src="{% static '../../media/tiktok.png' %}" alt="tiktok"></a>
+        </div>
+    </div>
+</footer>
+	<script>
+        const circles = document.querySelectorAll('.circle');
+        circles.forEach((circle) => {
+            circle.addEventListener('click', () => {
+                const question = circle.parentElement;
+                const answer = question.querySelector('.answer');
+
+                if (answer.style.height === '0px') {
+                    answer.style.height = answer.scrollHeight + 'px';
+                    circle.style.transform = 'rotate(45deg)';
+                } else {
+                    answer.style.height = '0px';
+                    circle.style.transform = 'rotate(0deg)';
+                }
+            });
+		});
+    </script>
+</body>
+</html>
