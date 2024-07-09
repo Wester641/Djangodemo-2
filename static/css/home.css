@@ -796,3 +796,7 @@ footer p{
         right: 135px;
     }
 }
+
+.nav-link {
+color: red
+}
